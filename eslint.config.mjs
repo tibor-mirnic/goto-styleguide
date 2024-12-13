@@ -1,7 +1,7 @@
 import globals from "globals";
-import esPluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import eslintPluginJavascript from "@eslint/js";
+import eslintPluginTypescript from "typescript-eslint";
+import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import eslintPluginImport from 'eslint-plugin-import';
 
@@ -46,9 +46,9 @@ export default [
   {
     languageOptions: { globals: globals.browser }
   },
-  esPluginJs.configs.recommended,
+  eslintPluginJavascript.configs.recommended,
   eslintPluginImport.flatConfigs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  ...eslintPluginTypescript.configs.recommended,
+  eslintPluginReact.configs.flat.recommended,
   eslintPluginPrettierRecommended
 ];
