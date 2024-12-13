@@ -1,0 +1,34 @@
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# dependencies
+/node_modules
+.cache
+
+# production
+/dist
+
+# misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#macOS
+.DS_Store
+
+# npm
+.npmrc
+
+# testing
+/coverage
+
+# storybook
+/storybook-static

@@ -1,0 +1,42 @@
+{
+  "name": "goto-styleguide",
+  "version": "1.0.0",
+  "description": "goto React/Strorybook Style Guide project with best practices, tips &amp; tricks",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "start-storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
+    "lint": "eslint stories",
+    "lint:fix": "eslint stories --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-angular": "^19.6.0",
+    "@eslint/js": "^9.16.0",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.4.7",
+    "typescript-eslint": "^8.18.0"
+  }
+}
