@@ -8,7 +8,8 @@
     "start-storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
     "lint": "eslint stories",
-    "lint:fix": "eslint stories --fix"
+    "lint:fix": "eslint stories --fix",
+    "test:ci": "echo 'TODO'"
   },
   "keywords": [],
   "author": "",
