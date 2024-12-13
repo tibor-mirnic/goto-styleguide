@@ -1,0 +1,12 @@
+@use 'sass:map';
+@use '../../../common/' as *;
+
+@mixin cui-button($theme, $cui-variables, $color-palette) {
+  $-color-primary: map.get($theme, primary);
+  $-color-white: map.get($color-palette, white);
+
+  .cui-button {
+    background: $-color-primary;
+    color: $-color-white;
+  }
+}

@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../../common/' as *;
+
+@mixin cui-label($theme, $cui-variables, $color-palette) {
+  $-color-text-dark: map.get($theme, text-dark);
+  $-font-weight-semi-bold: get-font-weight(semi-bold, $cui-variables);
+
+  label {
+    color: $-color-text-dark;
+    font-weight: $-font-weight-semi-bold;
+  }
+
+  small {
+    @include font(text, sm, regular, $cui-variables);
+    color: $-color-text-dark;
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "name": "goto-styleguide",
+  "version": "1.0.0",
+  "description": "goto React/Storybook Style Guide project with best practices, tips &amp; tricks",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./scss": {
+      "import": "./dist/scss/_index.scss",
+      "require": "./dist/scss/_index.scss"
+    }
+  },
+  "scripts": {
+    "prepare": "husky",
+    "start": "npm run start:storybook",
+    "start:storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
+    "build:vite": "vite build",
+    "build:sass": "node scripts/sass.js",
+    "build": "run-s build:vite build:sass",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test:ci": "echo 'TODO'"
+  },
+  "bin": {
+    "copy-assets": "./copy-assets.js"
+  },
+  "keywords": [],
+  "author": "Tibor Mirnic",
+  "license": "MIT",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-angular": "^19.6.0",
+    "@eslint/js": "^9.16.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
+    "@types/rollup-plugin-peer-deps-external": "^2.2.5",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "fs-extra": "^11.3.0",
+    "globals": "^15.13.0",
+    "husky": "^9.1.7",
+    "jsdom": "^25.0.1",
+    "lint-staged": "^15.2.11",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.4.2",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prop-types": "^15.8.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "sass": "^1.83.0",
+    "semantic-release": "^24.2.0",
+    "storybook": "^8.4.7",
+    "typescript-eslint": "^8.18.0",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

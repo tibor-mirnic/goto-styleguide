@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use 'font' as *;
+@use 'form' as *;
+@use 'label' as *;
+
+@mixin load-cui-base($theme, $cui-variables, $color-palette) {
+  @include cui-form($theme, $cui-variables, $color-palette);
+  @include cui-label($theme, $cui-variables, $color-palette);
+}
+
+@mixin load-cui-core($cui-variables) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    height: 100vh;
+    font-size: map.get($cui-variables, font-size);
+    font-family: map.get($cui-variables, font-family);
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  @include load-cui-font();
+}

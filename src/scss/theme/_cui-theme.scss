@@ -1,0 +1,6 @@
+@use '../private' as *;
+
+@mixin load-cui-theme($theme, $cui-variables, $color-palette) {
+  @include load-cui-base($theme, $cui-variables, $color-palette);
+  @include load-cui-components($theme, $cui-variables, $color-palette);
+}

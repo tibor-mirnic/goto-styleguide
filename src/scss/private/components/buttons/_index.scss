@@ -1,0 +1,5 @@
+@use './cui-button' as *;
+
+@mixin load-cui-buttons($theme, $cui-variables, $color-palette) {
+  @include cui-button($theme, $cui-variables, $color-palette);
+}

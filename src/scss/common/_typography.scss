@@ -1,0 +1,37 @@
+@use 'sass:map';
+
+@function get-font-scale($type, $scale, $cui-variables) {
+  $-typography: map.get($cui-variables, typography);
+  $-scales: map.get($-typography, scales);
+  $-type: map.get($-scales, $type);
+
+  @return map.get($-type, $scale);
+}
+
+@function get-font-size($type, $scale, $cui-variables) {
+  $-scale: get-font-scale($type, $scale, $cui-variables);
+
+  @return map.get($-scale, font-size);
+}
+
+@function get-line-height($type, $scale, $cui-variables) {
+  $-scale: get-font-scale($type, $scale, $cui-variables);
+
+  @return map.get($-scale, line-height);
+}
+
+@function get-font-weight($weight, $cui-variables) {
+  $-typography: map.get($cui-variables, typography);
+  $-weights: map.get($-typography, weights);
+
+  @return map.get($-weights, $weight);
+}
+
+@mixin font($type, $scale, $weight, $cui-variables) {
+  font-size: get-font-size($type, $scale, $cui-variables);
+  line-height: get-line-height($type, $scale, $cui-variables);
+
+  @if $weight {
+    font-weight: get-font-weight($weight, $cui-variables);
+  }
+}

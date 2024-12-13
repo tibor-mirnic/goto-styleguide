@@ -1,0 +1,13 @@
+@use 'sass:map';
+
+@function get-paddings($cui-variables) {
+  $-spacing: map.get($cui-variables, spacing);
+
+  @return map.get($-spacing, paddings);
+}
+
+@function get-padding($size, $cui-variables) {
+  $-paddings: get-paddings($cui-variables);
+
+  @return map.get($-paddings, $size);
+}

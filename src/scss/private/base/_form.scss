@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../../common/' as *;
+
+@mixin cui-form($theme, $cui-variables, $color-palette) {
+  $-padding-lg: get-padding('lg', $cui-variables);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    gap: $-padding-lg;
+  }
+}

@@ -1,0 +1,49 @@
+@mixin load-roboto-font($path) {
+  @font-face {
+    font-family: 'Roboto';
+    src: url($path + '/Roboto-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url($path + '/Roboto-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url($path + '/Roboto-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url($path + '/Roboto-SemiBold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url($path + '/Roboto-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url($path + '/Roboto-ExtraBold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 800;
+    text-rendering: optimizeLegibility;
+  }
+}

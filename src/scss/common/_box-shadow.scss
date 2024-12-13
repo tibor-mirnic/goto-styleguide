@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+@mixin box-shadow-light($cui-variables) {
+  box-shadow: get-box-shadow(light, $cui-variables);
+}
+
+@mixin box-shadow-medium($cui-variables) {
+  box-shadow: get-box-shadow(medium, $cui-variables);
+}
+
+@mixin box-shadow-dark($cui-variables) {
+  box-shadow: get-box-shadow(dark, $cui-variables);
+}
+
+@function get-box-shadow($size, $cui-variables) {
+  $-shadows: map.get($cui-variables, shadows);
+  @return map.get($-shadows, $size);
+}

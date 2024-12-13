@@ -1,0 +1,12 @@
+@use '../public/' as public;
+@use 'cui-theme' as theme;
+
+$cui-theme: public.$theme-light !default;
+$cui-color-palette: public.$color-palette !default;
+$cui-variables: public.$cui-variables !default;
+
+@use '../private/overrides/vendor-overrides' as vendor;
+
+// Custom
+@include vendor.load-vendor-overrides($cui-theme, $cui-variables, $cui-color-palette);
+@include theme.load-cui-theme($cui-theme, $cui-variables, $cui-color-palette);

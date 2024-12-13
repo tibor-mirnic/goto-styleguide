@@ -1,0 +1,5 @@
+@use 'load-roboto-font' as *;
+
+@mixin load-cui-font() {
+  @include load-roboto-font('font/roboto');
+}
