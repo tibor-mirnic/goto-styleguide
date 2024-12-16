@@ -7,6 +7,11 @@ const preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: ['Styleguide', ['About']]
+      }
+    }
   },
 };
 
