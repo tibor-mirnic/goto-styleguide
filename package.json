@@ -1,7 +1,7 @@
 {
   "name": "goto-styleguide",
   "version": "1.0.0",
-  "description": "goto React/Strorybook Style Guide project with best practices, tips &amp; tricks",
+  "description": "goto React/Storybook Style Guide project with best practices, tips &amp; tricks",
   "main": "index.js",
   "scripts": {
     "prepare": "husky",
@@ -12,8 +12,8 @@
     "test:ci": "echo 'TODO'"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tibor Mirnic",
+  "license": "MIT",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
     "@commitlint/cli": "^19.6.0",
