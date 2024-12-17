@@ -2,6 +2,7 @@ import globals from "globals";
 import eslintPluginJavascript from "@eslint/js";
 import eslintPluginTypescript from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
+import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import eslintPluginImport from 'eslint-plugin-import';
 
@@ -12,7 +13,15 @@ export default [
     ignores: ['dist']
   },
   {
-    languageOptions: { globals: globals.browser }
+    languageOptions: {
+      globals: globals.browser
+    },
+    plugins: {
+      'react-hooks': eslintPluginReactHooks
+    },
+    rules: {      
+      ...eslintPluginReactHooks.configs.recommended.rules
+    }
   },
   eslintPluginJavascript.configs.recommended,
   eslintPluginImport.flatConfigs.recommended,
