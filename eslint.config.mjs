@@ -3,6 +3,7 @@ import eslintPluginJavascript from "@eslint/js";
 import eslintPluginTypescript from "typescript-eslint";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
+import eslintPluginReactRefresh from "eslint-plugin-react-refresh";
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import eslintPluginImport from 'eslint-plugin-import';
 
@@ -17,10 +18,15 @@ export default [
       globals: globals.browser
     },
     plugins: {
-      'react-hooks': eslintPluginReactHooks
+      'react-hooks': eslintPluginReactHooks,
+      'react-refresh': eslintPluginReactRefresh
     },
     rules: {      
-      ...eslintPluginReactHooks.configs.recommended.rules
+      ...eslintPluginReactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true }
+      ]
     }
   },
   eslintPluginJavascript.configs.recommended,
