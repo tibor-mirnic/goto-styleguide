@@ -1,6 +1,7 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import copy from 'rollup-plugin-copy';
 import * as path from 'path';
 
 export default defineConfig({
@@ -14,7 +15,19 @@ export default defineConfig({
         '**/*.stories.*',
         'src/stories'
       ]
-    }),
+    }), {
+      ...copy({
+        hook: 'writeBundle',
+        targets: [
+          {
+            src: 'src/scss/public/*',
+            dest: 'dist/scss'
+          }
+        ]
+      }),
+      enforce: 'post',
+      apply: 'build'
+    }
   ],
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
@@ -23,21 +36,21 @@ export default defineConfig({
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
-      transformMixedEsModules: true,
+      transformMixedEsModules: true
     },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'styleguide',
+      name: 'StyleGuide',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
-      formats: ['es', 'cjs'],
+      formats: ['es', 'cjs']
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
-    },
+      external: ['react', 'react-dom', 'react/jsx-runtime']
+    }
   },
   test: {
     watch: false,
