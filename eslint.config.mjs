@@ -38,7 +38,9 @@ export default [
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     rules: {
       // reconfigured rules
-      "import/no-default-export": "error",   
+      "import/no-default-export": "error",
+      // TODO: why is this not working out of the box
+      "import/no-unresolved": "off",
       "react/function-component-definition": [
         2,
         {

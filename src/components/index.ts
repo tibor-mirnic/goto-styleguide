@@ -1,1 +1,1 @@
-export * from './buttons/index.ts';
+export * from './buttons';

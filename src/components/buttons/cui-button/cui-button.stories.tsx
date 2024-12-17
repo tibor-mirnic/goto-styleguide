@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CuiButton } from './CuiButton.tsx';
+import { CuiButton } from './CuiButton';
 
 const meta: Meta<typeof CuiButton> = {
   component: CuiButton,

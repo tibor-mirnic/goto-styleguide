@@ -1,1 +1,1 @@
-export * from './cui-button/index.ts';
+export * from './cui-button';
