@@ -9,8 +9,8 @@
     "prepare": "husky",
     "start:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "lint": "eslint stories",
-    "lint:fix": "eslint stories --fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "test:ci": "echo 'TODO'"
   },
   "keywords": [],

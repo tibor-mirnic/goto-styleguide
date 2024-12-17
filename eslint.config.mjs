@@ -9,17 +9,21 @@ import eslintPluginImport from 'eslint-plugin-import';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
+    ignores: ['dist']
+  },
+  {
+    languageOptions: { globals: globals.browser }
+  },
+  eslintPluginJavascript.configs.recommended,
+  eslintPluginImport.flatConfigs.recommended,
+  ...eslintPluginTypescript.configs.recommended,
+  eslintPluginReact.configs.flat.recommended,
+  eslintPluginPrettierRecommended,
+  {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     rules: {
       // reconfigured rules
-      "import/no-default-export": "error", 
-      "@typescript-eslint/lines-between-class-members": "off",
-      "@typescript-eslint/comma-dangle": [
-        "error",
-        {
-          "functions": "never"
-        }
-      ],
+      "import/no-default-export": "error",   
       "react/function-component-definition": [
         2,
         {
@@ -37,18 +41,10 @@ export default [
     }
   },
   {
-    files: ["**/*/*.stories.tsx"],
+    files: ["**/*.stories.tsx"],
     rules: {
       "import/no-default-export": "off",
       "import/no-extraneous-dependencies": "off"
     }
-  },
-  {
-    languageOptions: { globals: globals.browser }
-  },
-  eslintPluginJavascript.configs.recommended,
-  eslintPluginImport.flatConfigs.recommended,
-  ...eslintPluginTypescript.configs.recommended,
-  eslintPluginReact.configs.flat.recommended,
-  eslintPluginPrettierRecommended
+  }
 ];
